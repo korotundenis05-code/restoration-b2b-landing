@@ -390,8 +390,8 @@ p {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .case-card {
@@ -415,19 +415,6 @@ p {
 
 .case-card:hover img {
   transform: scale(1.025);
-}
-
-.case-card span {
-  position: absolute;
-  left: 14px;
-  bottom: 14px;
-  max-width: calc(100% - 28px);
-  padding: 8px 10px;
-  color: #fff;
-  background: rgba(15, 18, 22, 0.78);
-  border-radius: var(--radius);
-  font-size: 13px;
-  font-weight: 800;
 }
 
 .calc-card {
