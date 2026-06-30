@@ -394,6 +394,10 @@ p {
   gap: 14px;
 }
 
+.gallery:not(.is-expanded) .case-card:nth-child(n + 9) {
+  display: none;
+}
+
 .case-card {
   position: relative;
   min-width: 0;
@@ -415,6 +419,17 @@ p {
 
 .case-card:hover img {
   transform: scale(1.025);
+}
+
+.gallery-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.button-dark {
+  color: #fff;
+  background: var(--graphite);
 }
 
 .calc-card {
@@ -683,6 +698,10 @@ p {
   .gallery,
   .control-images {
     grid-template-columns: 1fr;
+  }
+
+  .gallery:not(.is-expanded) .case-card:nth-child(n + 5) {
+    display: none;
   }
 
   .problem-list article,
