@@ -31,6 +31,14 @@ function loadDeferredGalleryImages() {
   });
 }
 
+document.querySelectorAll(".benefits article").forEach((card) => {
+  card.addEventListener("pointermove", (event) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty("--spotlight-x", `${event.clientX - rect.left}px`);
+    card.style.setProperty("--spotlight-y", `${event.clientY - rect.top}px`);
+  });
+});
+
 document.querySelectorAll("[data-gallery]").forEach((button) => {
   button.addEventListener("click", () => {
     lightboxImage.src = button.dataset.gallery;
