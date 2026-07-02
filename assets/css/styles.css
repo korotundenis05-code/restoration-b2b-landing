@@ -397,15 +397,14 @@ p {
 .problem-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+  gap: 12px;
 }
 
 .problem-list article {
   min-height: 220px;
   padding: 28px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
 }
 
 .problem-list span,
@@ -436,17 +435,18 @@ p {
 .steps {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
+  gap: 12px;
 }
 
 .steps article {
   min-height: 270px;
-  padding: 26px 20px 0 0;
-  border-right: 1px solid var(--line);
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
 }
 
 .steps article + article {
-  padding-left: 20px;
+  padding-left: 26px;
 }
 
 .gallery {
@@ -752,7 +752,7 @@ p {
 
   .steps article {
     min-height: 220px;
-    padding-left: 0;
+    padding: 24px;
   }
 
   .gallery,
@@ -811,15 +811,15 @@ p {
     display: none;
   }
 
-  .problem-list article,
-  .steps article {
+  .problem-list article {
     min-height: auto;
-    padding: 22px 0;
-    border-right: 0;
+    padding: 22px;
   }
 
-  .problem-list {
-    border-left: 0;
+  .steps article {
+    min-height: auto;
+    padding: 22px;
+    border: 1px solid var(--line);
   }
 
   .problem-list span,
