@@ -29,6 +29,8 @@ Spec version: 2026-08-20.1
 - Live JSON-LD parse from public URL: PASS.
 - Live IndexNow key file: PASS.
 - IndexNow API submission: PASS, returned `202 Accepted`.
+- Direct Bing IndexNow submission: PASS, returned `200`.
+- Direct Yandex IndexNow submission: PASS, returned `202` with `success:true`.
 
 ## External Limitations
 

@@ -16,3 +16,5 @@ checks:
   - GitHub Pages deployment: PASS
   - live IndexNow key file: PASS
   - IndexNow API submission: PASS
+  - Bing IndexNow direct submission: PASS
+  - Yandex IndexNow direct submission: PASS

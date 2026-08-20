@@ -12,7 +12,7 @@ Reviewer isolation: strict self-review after re-reading spec, diff and live chec
 - R6: PASS. Visible FAQ section is present and styled.
 - R7: PASS. Existing gallery/contact behavior is preserved; no JS changes needed.
 - R8: PASS. Upload folder has updated files; direct git publication succeeded for the main change.
-- R9: PASS. IndexNow key file is live and IndexNow API accepted submitted URLs with `202 Accepted`.
+- R9: PASS. IndexNow key file is live. General IndexNow API accepted submitted URLs with `202 Accepted`; Bing accepted direct submission with `200`; Yandex accepted direct submission with `202` and `success:true`.
 
 ## Findings
 
