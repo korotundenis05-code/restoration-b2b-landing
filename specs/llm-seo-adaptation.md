@@ -20,6 +20,7 @@ R5. Add Schema.org JSON-LD describing the business/service, website, image galle
 R6. Add a visible FAQ section with concise answers relevant to LLM and search queries.
 R7. Preserve current visual design and existing gallery/contact behavior.
 R8. Prepare all changed files in UPLOAD_TO_GITHUB and attempt direct git publication if credentials allow.
+R9. Add an IndexNow verification key and submit public URLs through IndexNow after the key is live.
 
 ## Out of Scope
 Guaranteeing that ChatGPT, Grok, Yandex Alice, DeepSeek, Google, Bing, or Yandex will immediately cite the site. Indexing and LLM answer inclusion are controlled by external systems.
@@ -30,6 +31,7 @@ C2. Parse JSON-LD from index.html as valid JSON.
 C3. Confirm key SEO/LLM strings exist in index.html.
 C4. Verify no obvious broken local file references for added metadata assets.
 C5. If publishing succeeds, fetch live files and confirm updated content; otherwise mark publication as requiring manual upload.
+C6. Confirm IndexNow key file is live and IndexNow API accepts the submitted URLs.
 
 ## Definition of Done
 All files are implemented, locally validated, copied to UPLOAD_TO_GITHUB, and either pushed to GitHub or ready for manual upload with exact file list.

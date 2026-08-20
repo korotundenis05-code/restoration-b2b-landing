@@ -12,6 +12,7 @@ Spec version: 2026-08-20.1
 - R6: Visible FAQ section added with four user-facing questions and answers.
 - R7: Existing contact links and gallery behavior preserved; CSS changes are additive for FAQ and prior gallery styling.
 - R8: Changed publish files copied to `UPLOAD_TO_GITHUB`; direct git push succeeded for main SEO/LLM commit.
+- R9: IndexNow verification key file `653524955ebf60c17f8f10b0e570502614f7c51a1d54e0c459165426ee205137.txt` added and published.
 
 ## Checks
 
@@ -26,7 +27,9 @@ Spec version: 2026-08-20.1
 - Live `llms.txt`: PASS.
 - Live home page contains canonical, FAQPage JSON-LD and FAQ section: PASS.
 - Live JSON-LD parse from public URL: PASS.
+- Live IndexNow key file: PASS.
+- IndexNow API submission: PASS, returned `202 Accepted`.
 
 ## External Limitations
 
-Search engine and LLM answer inclusion cannot be guaranteed or forced immediately from code. The site is technically ready for crawling; actual discovery requires crawler visits and/or manual submission through Google Search Console, Bing Webmaster Tools and Yandex Webmaster.
+Search engine and LLM answer inclusion cannot be guaranteed or forced immediately from code. The site is technically ready for crawling and has been submitted through IndexNow; Google Search Console, Bing Webmaster Tools and Yandex Webmaster account ownership setup still requires a logged-in owner account.
