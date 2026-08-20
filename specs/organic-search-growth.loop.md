@@ -1,6 +1,6 @@
 # Organic Search Growth Loop
 
-- Phase: REVIEW PASS
+- Phase: COMPLETE
 - Spec version: 1
 - Baseline revision: `159a999`
 - Iteration: 1
@@ -11,4 +11,7 @@
 - Findings closed: canonical/discovery mismatch; lack of focused service pages; JavaScript incompatibility risk for service pages.
 - Checks: static metadata/JSON-LD validation PASS; local link/asset validation PASS; `node --check` PASS; `xmllint --noout sitemap.xml` PASS; local HTTP validation PASS; `git diff --check` PASS.
 - Review score: 9.7/10.
-- Remaining blocker: publication and live-domain validation.
+- Publication: commit `3c8baa1` pushed to `origin/main`.
+- Live validation: all public pages and discovery files returned `200` from `https://restb2b.fun/`.
+- IndexNow: submitted five URLs; response `202 Accepted`.
+- Remaining blockers: none for implementation. Search-engine ranking remains externally controlled.

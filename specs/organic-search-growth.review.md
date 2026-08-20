@@ -18,6 +18,8 @@ Reviewer isolation: strict self-review against the approved specification and cu
 - XML validation: PASS.
 - Local HTTP validation: PASS.
 - Diff whitespace validation: PASS.
+- Live deployment and discovery-file validation: PASS.
+- IndexNow acceptance for all public URLs: PASS (`202`).
 
 ## Findings
 

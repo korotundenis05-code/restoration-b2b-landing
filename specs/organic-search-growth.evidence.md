@@ -31,7 +31,9 @@
 - Node local link/asset validation: PASS.
 - Local HTTP checks on five pages plus `robots.txt`, `sitemap.xml`, and `llms.txt`: all `200`.
 - `git diff --check`: PASS.
+- Live-domain HTTP validation after deployment: all five pages plus `robots.txt`, `sitemap.xml`, and `llms.txt` returned `200`.
+- IndexNow submission for all five public URLs: accepted with HTTP `202`.
 
 ## Remaining uncertainty
 
-- Search engines and LLMs control their own crawl schedule and ranking. The new URLs will be submitted through IndexNow after deployment, but organic position cannot be guaranteed.
+- Search engines and LLMs control their own crawl schedule and ranking. Organic position cannot be guaranteed.
