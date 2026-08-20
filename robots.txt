@@ -28,4 +28,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://korotundenis05-code.github.io/restoration-b2b-landing/sitemap.xml
+Sitemap: https://restb2b.fun/sitemap.xml

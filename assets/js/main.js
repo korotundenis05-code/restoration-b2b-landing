@@ -11,18 +11,24 @@ function updateHeader() {
   header.classList.toggle("is-scrolled", window.scrollY > 12);
 }
 
-window.addEventListener("scroll", updateHeader, { passive: true });
-updateHeader();
+if (header) {
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
+}
 
-navToggle.addEventListener("click", () => {
-  header.classList.toggle("is-open");
-});
+if (header && navToggle) {
+  navToggle.addEventListener("click", () => {
+    header.classList.toggle("is-open");
+  });
+}
 
-nav.addEventListener("click", (event) => {
-  if (event.target.closest("a")) {
-    header.classList.remove("is-open");
-  }
-});
+if (header && nav) {
+  nav.addEventListener("click", (event) => {
+    if (event.target.closest("a")) {
+      header.classList.remove("is-open");
+    }
+  });
+}
 
 function loadDeferredGalleryImages() {
   document.querySelectorAll(".gallery img[data-src]").forEach((image) => {
@@ -68,15 +74,17 @@ function closeLightbox() {
   document.body.style.overflow = "";
 }
 
-lightboxClose.addEventListener("click", closeLightbox);
-lightbox.addEventListener("click", (event) => {
-  if (event.target === lightbox) {
-    closeLightbox();
-  }
-});
+if (lightbox && lightboxClose) {
+  lightboxClose.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+}
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && !lightbox.hidden) {
+  if (lightbox && event.key === "Escape" && !lightbox.hidden) {
     closeLightbox();
   }
 });

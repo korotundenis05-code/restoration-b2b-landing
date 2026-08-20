@@ -3,7 +3,13 @@
 Restoration B2B is a B2B service in Saint Petersburg, Russia, focused on restoration of sanitary ceramics and return of reclamation or warehouse goods to commercial sale.
 
 Canonical website:
-https://korotundenis05-code.github.io/restoration-b2b-landing/
+https://restb2b.fun/
+
+Service pages:
+- https://restb2b.fun/restavratsiya-santehnicheskoy-keramiki.html
+- https://restb2b.fun/vosstanovlenie-skolov-santehniki.html
+- https://restb2b.fun/vosstanovlenie-glazuri-santehniki.html
+- https://restb2b.fun/restavratsiya-reklamatsionnyh-partiy.html
 
 Primary service:
 B2B restoration of sanitary ceramic products, including sinks, toilets, baths and ceramic panels with cosmetic defects.
