@@ -17,4 +17,4 @@ No blocking correctness or SEO findings remain in the pre-release diff.
 
 ## Decision
 
-Pre-release review approved for production, subject to the required live checks and IndexNow submission.
+Approved. Production HTTP, live DOM behavior, Lighthouse thresholds, and IndexNow submission all pass. No blocking findings remain.

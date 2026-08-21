@@ -32,4 +32,10 @@
 
 ## Publication evidence
 
-Pending production deployment, live HTTP verification, production Lighthouse, and IndexNow submission.
+- Production revision: `5505ff7` on `origin/main`.
+- Live HTTP: 200 for all six canonical HTML pages, `robots.txt`, `sitemap.xml`, `llms.txt`, and `llms-full.txt`.
+- Live DOM: expected H1 and FAQ present on all six pages; mobile menus open; no horizontal overflow at 390 px.
+- Post-release Lighthouse: Performance 91, Accessibility 100, Best Practices 100, SEO 100.
+- FCP 2.8 s, LCP 2.8 s, TBT 0 ms, CLS 0.014, Speed Index 3.2 s.
+- IndexNow submission: HTTP 200 for all six canonical URLs.
+- R1-R8: pass.
