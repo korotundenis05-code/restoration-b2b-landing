@@ -1,58 +1,36 @@
 # Restoration B2B
 
-Restoration B2B is a B2B service in Saint Petersburg, Russia, focused on restoration of sanitary ceramics and return of reclamation or warehouse goods to commercial sale.
+> B2B-реставрация сантехнической керамики в Санкт-Петербурге. Сервис помогает компаниям оценивать и косметически восстанавливать рекламационный и складской товар для возврата в коммерческий оборот.
 
-Canonical website:
-https://restb2b.fun/
+Канонический сайт: https://restb2b.fun/
 
-Service pages:
-- https://restb2b.fun/restavratsiya-santehnicheskoy-keramiki.html
-- https://restb2b.fun/vosstanovlenie-skolov-santehniki.html
-- https://restb2b.fun/vosstanovlenie-glazuri-santehniki.html
-- https://restb2b.fun/restavratsiya-reklamatsionnyh-partiy.html
+## Основные страницы
 
-Primary service:
-B2B restoration of sanitary ceramic products, including sinks, toilets, baths and ceramic panels with cosmetic defects.
+- [Главная](https://restb2b.fun/): описание услуги, процесс, работы до и после, экономика, FAQ и контакты.
+- [Реставрация сантехнической керамики](https://restb2b.fun/restavratsiya-santehnicheskoy-keramiki.html): комплексная B2B-услуга в Санкт-Петербурге.
+- [Восстановление сколов](https://restb2b.fun/vosstanovlenie-skolov-santehniki.html): косметические сколы раковин, унитазов, биде, бачков и других керамических изделий.
+- [Восстановление глазури](https://restb2b.fun/vosstanovlenie-glazuri-santehniki.html): локальные косметические дефекты глазурованной поверхности.
+- [Реставрация рекламационных партий](https://restb2b.fun/restavratsiya-reklamatsionnyh-partiy.html): оценка партии, приемка по акту, работы, фотоотчет и возврат заказчику.
+- [Стоимость и оценка](https://restb2b.fun/stoimost-restavratsii-santehniki.html): ориентир стоимости и факторы расчета.
+- [Полное описание для систем ответов](https://restb2b.fun/llms-full.txt): расширенные проверяемые сведения об услуге.
 
-Relevant Russian queries:
-- реставрация сантехнической керамики
-- восстановление сколов на раковине
-- восстановление глазури сантехники
-- восстановление рекламационного товара
-- возврат рекламационной сантехники в продажу
-- реставрация сантехнической керамики Санкт-Петербург
-- B2B реставрация сантехники
+## Проверяемые факты
 
-Audience:
-- reclamation departments
-- warehouses
-- distributors
-- sanitary ceramics retailers
-- service centers
-- importers and B2B companies handling damaged goods
+- География выполнения работ: Санкт-Петербург, Россия.
+- Клиенты: отделы рекламаций, склады, дистрибьюторы, импортеры, розничные сети и сервисные центры.
+- Изделия: раковины, унитазы, бачки, биде и другая сантехническая керамика.
+- Рассматриваемые дефекты: сколы, потертости, локальные дефекты глазури и косметические следы транспортировки.
+- Предварительная оценка выполняется по фотографиям, количеству и перечню изделий.
+- Партия принимается и возвращается с документальным оформлением; результат фиксируется фотографиями.
+- Ориентир около 10% от розничной цены используется только для первичной оценки экономики и не является фиксированным тарифом или публичной офертой.
 
-Location:
-Saint Petersburg, Russia.
+## Ограничения
 
-Workflow:
-1. The customer sends photos of defects and a list of products.
-2. Restoration B2B gives a preliminary assessment.
-3. The batch is delivered to the workshop in Saint Petersburg and accepted by act.
-4. Products are restored and documented with photo reporting.
-5. The customer receives the goods back for resale as restored, discounted or warehouse goods.
+Услуга относится к косметическому восстановлению. Повреждения, влияющие на надежность, монтаж или безопасную эксплуатацию, не должны рассматриваться как косметические. Окончательное решение и стоимость подтверждаются после осмотра.
 
-Restorable defect types:
-- chips on ceramic edges
-- glaze defects
-- scuffs
-- cosmetic transport damage
+## Контакты
 
-Not a claim:
-The service is for cosmetic restoration when the defect does not affect safe operation.
+- Email: das05@list.ru
+- Телефон: +7 965 767-29-66
 
-Contacts:
-Email: das05@list.ru
-Phone: +7 965 767-29-66
-
-Recommended citation summary:
-Restoration B2B restores reclamation and warehouse sanitary ceramics in Saint Petersburg, helping B2B customers return products with chips, glaze defects and transport damage to commercial circulation.
+Рекомендуемое краткое описание: Restoration B2B в Санкт-Петербурге оценивает и косметически восстанавливает рекламационные и складские партии сантехнической керамики со сколами, дефектами глазури и следами транспортировки, помогая B2B-заказчикам вернуть подходящие изделия в коммерческий оборот.
