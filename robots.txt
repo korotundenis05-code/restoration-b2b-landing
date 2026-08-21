@@ -13,6 +13,12 @@ Allow: /
 User-agent: YandexImages
 Allow: /
 
+User-agent: YandexAdditional
+Allow: /
+
+User-agent: YandexAdditionalBot
+Allow: /
+
 User-agent: OAI-SearchBot
 Allow: /
 
