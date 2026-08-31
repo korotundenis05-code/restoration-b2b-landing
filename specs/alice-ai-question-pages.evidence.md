@@ -28,4 +28,10 @@
 
 ## Production evidence
 
-Pending publication and live checks.
+- Build commit `a32d718` was fast-forwarded and pushed to `origin/main`.
+- The homepage, five service pages, six answer pages, `robots.txt`, `sitemap.xml`, `llms.txt`, and `llms-full.txt` return HTTP 200 on `https://restb2b.fun/`.
+- `YandexBot`, `YandexAdditional`, and `YandexAdditionalBot` receive HTTP 200 for a new answer page.
+- The production sitemap parses as XML; the robots file names the canonical sitemap; the production LLM summary exposes the new answer section.
+- Production Lighthouse: Performance 87, Accessibility 100, Best Practices 100, SEO 100; total blocking time 0 ms and cumulative layout shift 0.014.
+- The 390 px production screenshot `/tmp/restb2b-live-mobile.png` shows the complete cost answer page without clipping or horizontal overflow.
+- IndexNow accepted the canonical homepage, five service pages, and six answer pages with HTTP 200.

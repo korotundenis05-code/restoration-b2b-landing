@@ -22,6 +22,6 @@ No blocking or major findings remain before publication.
 - Search ranking and citation by Alice AI or another LLM cannot be guaranteed by on-site changes alone. Publication makes the pages crawlable and citable; actual visibility depends on recrawl, indexing, query demand, competition, external authority, and each system's answer-selection policy.
 - Production performance and deployment propagation must be verified after `origin/main` is published.
 
-## Pre-publication verdict
+## Final verdict
 
-PASS for build and local review. R9 remains pending until production, IndexNow, ZIP, and upload-copy verification complete.
+PASS for build, local validation, production publication, crawler access, Lighthouse, and IndexNow. Local artifact synchronization is verified separately after the final documentation commit.
