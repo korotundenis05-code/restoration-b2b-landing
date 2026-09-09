@@ -644,7 +644,7 @@ p {
 }
 
 .service-page-main {
-  padding: 72px 0 0;
+  padding: 0;
 }
 
 .service-hero {
@@ -661,7 +661,12 @@ p {
 
 .service-hero h1 {
   max-width: 900px;
-  font-size: clamp(44px, 6vw, 76px);
+  font-size: 64px;
+  overflow-wrap: anywhere;
+}
+
+.service-hero .eyebrow {
+  color: #9dccf1;
 }
 
 .service-hero p:not(.eyebrow) {
@@ -679,7 +684,50 @@ p {
 
 .service-copy h2 {
   margin-top: 54px;
-  font-size: clamp(30px, 3vw, 46px);
+  font-size: 38px;
+  overflow-wrap: anywhere;
+}
+
+.service-copy section {
+  margin-top: 44px;
+}
+
+.service-copy a:not(.service-example) {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article-contents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.service-example {
+  display: block;
+  max-width: 620px;
+  margin-bottom: 20px;
+}
+
+.service-example img {
+  object-fit: contain;
+}
+
+.service-location {
+  margin: 18px 0 0;
+  font-size: 14px;
+}
+
+[id] {
+  scroll-margin-top: 88px;
+}
+
+.hero h1 {
+  font-size: 68px;
+  line-height: 1.06;
 }
 
 .service-copy h2:first-child {
@@ -766,6 +814,15 @@ p {
 }
 
 @media (max-width: 760px) {
+  .hero h1,
+  .service-hero h1 {
+    font-size: 40px;
+  }
+
+  .service-copy h2 {
+    font-size: 30px;
+  }
+
   .service-links,
   .service-content {
     grid-template-columns: 1fr;

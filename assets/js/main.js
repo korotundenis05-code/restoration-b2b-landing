@@ -17,8 +17,11 @@ if (header) {
 }
 
 if (header && navToggle) {
+  navToggle.setAttribute("aria-expanded", "false");
   navToggle.addEventListener("click", () => {
-    header.classList.toggle("is-open");
+    const expanded = header.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(expanded));
+    navToggle.setAttribute("aria-label", expanded ? "Закрыть меню" : "Открыть меню");
   });
 }
 
@@ -26,6 +29,10 @@ if (header && nav) {
   nav.addEventListener("click", (event) => {
     if (event.target.closest("a")) {
       header.classList.remove("is-open");
+      if (navToggle) {
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Открыть меню");
+      }
     }
   });
 }
@@ -54,8 +61,10 @@ document.querySelectorAll("[data-gallery]").forEach((button) => {
 });
 
 if (gallery && galleryToggle) {
+  galleryToggle.setAttribute("aria-expanded", "false");
   galleryToggle.addEventListener("click", () => {
     const expanded = gallery.classList.toggle("is-expanded");
+    galleryToggle.setAttribute("aria-expanded", String(expanded));
     if (expanded) {
       loadDeferredGalleryImages();
     }
@@ -84,6 +93,12 @@ if (lightbox && lightboxClose) {
 }
 
 document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && header && navToggle && header.classList.contains("is-open")) {
+    header.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Открыть меню");
+    navToggle.focus();
+  }
   if (lightbox && event.key === "Escape" && !lightbox.hidden) {
     closeLightbox();
   }

@@ -11,6 +11,9 @@
 - `assets/js/main.js` — мобильное меню и просмотр изображений.
 - `assets/images` — оптимизированные WebP-фотографии.
 - `sitemap.xml`, `robots.txt`, `llms.txt`, `llms-full.txt` — файлы поискового и машинного обнаружения.
+- `restavratsiya-rakoviny-spb.html`, `restavratsiya-unitaza-spb.html`, `remont-skolov-vanny-spb.html` — услуги по типу изделия.
+- `specs/service-search-queries.md` — карта запросов и ограничения замера видимости.
+- `scripts/validate_site.py` — проверка sitemap, HTML-метаданных, ссылок, ресурсов и JSON-LD: `python3 scripts/validate_site.py`.
 
 ## Локальный запуск
 
