@@ -18,13 +18,19 @@ Date: 2026-09-10. Spec version 1. Baseline a58289d99d1e3553a1beb8e369a368efeeaca
 - `node --check assets/js/main.js`: exit 0.
 - `git diff --check`: exit 0.
 - Chrome Playwright script stored outside publication at `/Users/macbook/Documents/New project/restb2b-browser-check.cjs`: exit 0, 34 page/viewport cases. Screenshots at `/Users/macbook/Documents/New project/restb2b-release-qa/`.
+- The same Chrome checks were repeated against `https://restb2b.fun/` after publication: exit 0, all 34 production page/viewport cases passed, including gallery interactions at both widths.
 
 ## Release gates
 
-Independent read-only review identified F1: summary-scope tests used overly weak substring checks. Repaired with explicit factual boundaries checked by the main validator and negative fixtures for both summary files. No visible content or CSS changed during this repair.
+Independent read-only review identified F1: summary-scope tests used overly weak substring checks. Repaired with explicit factual boundaries checked by the main validator and negative fixtures for both summary files. The reviewer independently closed F1: ten tests plus 14 additional in-memory missing-fact mutations passed/rejected as expected. No visible content or CSS changed during this repair.
 
-- R6: Pending publication and public byte equality. GitHub API confirms both legacy Pages and repository workflow previously deployed the same push. The release will use GitHub Actions as the single source so validation failures prevent publication. Domain and repository remain unchanged.
-- R7: Pending original checkout, ZIP and upload export synchronization after release.
+- R6: PASS. Content release `44476c1c05de1a4f79ce80dd3f0dd0c804f3316c` published successfully by GitHub Actions run `34516399189`. GitHub Pages now reports `build_type: workflow`, `cname: restb2b.fun`, HTTPS enforced. The former duplicate legacy deployment is disabled; repository/domain unchanged. `python3 scripts/verify_live.py` exit 0: all 17 canonical pages and six supporting files return the expected public payload byte-for-byte; normal URLs, no cache-busting query. Robots permits YandexBot, Googlebot, Bingbot and OAI-SearchBot for all pages.
+- R6 notification: live key file matched the local IndexNow key; POST to `https://yandex.com/indexnow` returned HTTP 202 for 15 actually changed/new HTML URLs. The remaining two unchanged pages were not resubmitted. HTTP 202 means receipt with provider key validation pending, not indexing or ranking evidence.
+- R7: PASS for the content release. Original `/Users/macbook/Documents/сайт реставрации код` was fast-forwarded without modifying unrelated data. Its `restoration-b2b-landing.zip` and `UPLOAD_TO_GITHUB/` contain exactly the 109 tracked files of that release; file sets and bytes match the checkout. No temporary files or audit transcripts included. Pre-existing unrelated `.DS_Store` files outside the export remain untouched. Final documentation-only revision is re-exported and checked after recording review results.
+
+Deployment: https://github.com/korotundenis05-code/restoration-b2b-landing/actions/runs/34516399189
+
+IndexNow response semantics: https://www.indexnow.org/documentation
 
 ## Limits
 
