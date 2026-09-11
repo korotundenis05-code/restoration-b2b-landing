@@ -28,7 +28,11 @@ Spec: repair-confidence.md v1.0. Baseline: fea26cd.
   discovery validation. Visible FAQ text is the exact source of structured answers.
 - R5: Existing boundary regression tests retained, four new tests added.
   Photos, styling, scripts, gallery and contacts are unchanged.
-- R6: Production deployment and export verification pending; not yet claimed PASS.
+- R6: Published content revision 239d838a69c91125f356d348310e6a2697757d85.
+  GitHub Pages workflow 34561480104 succeeded. Original project was fast-forwarded
+  without overwriting untracked files; original, ZIP and UPLOAD_TO_GITHUB contained
+  the same 115 tracked files with exact bytes. Final report-only revision will
+  repeat deployment and full tracked-manifest export verification before handoff.
 
 ## Completed checks
 
@@ -46,6 +50,22 @@ Spec: repair-confidence.md v1.0. Baseline: fea26cd.
   Screenshots: sibling directory restb2b-confidence-qa, not published.
 - Additional Chrome check with JavaScript disabled at 320x800: new resource,
   category and conditions page answers visible, no horizontal overflow; exit 0.
-- Independent reviewer: pending.
+- Independent review found no actionable defects. The same read-only reviewer
+  accepted direct production/export evidence, closed R6 and returned SPECLOOP PASS,
+  9.8/10. Full result: repair-confidence.review.md.
+
+## Production checks
+
+- `python3 scripts/verify_live.py`: exit 0; all 18 canonical pages and six supporting
+  files HTTP 200, correct final URLs and exact bytes matching the content revision.
+  No noindex/nosnippet response headers; robots permits YandexBot, Googlebot,
+  Bingbot and OAI-SearchBot on every canonical page.
+- Chrome against https://restb2b.fun/: exit 0, all 36 desktop/mobile cases passed,
+  including new content, images, enquiry draft, navigation and gallery behavior.
+  Live screenshots in sibling directory restb2b-confidence-live-qa, not published.
+- IndexNow: eight changed/new canonical pages submitted to Yandex after the live
+  key file was verified. HTTP 200 with `success: true`, 2026-09-11.
+  This confirms receipt, not crawling, indexing, ranking or inclusion in AI answers.
+- Provider verification files, domain, hosting settings and robots preserved.
 
 No result here demonstrates a search position or an AI citation.
