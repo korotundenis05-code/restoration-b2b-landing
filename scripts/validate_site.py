@@ -15,7 +15,11 @@ NEW_PAGES = {
     "restavratsiya-unitaza-spb.html",
     "remont-skolov-vanny-spb.html",
 }
-RESOURCE_PAGES = {"kak-sfotografirovat-skol-santehniki.html", "kontakty-i-usloviya.html"}
+RESOURCE_PAGES = {
+    "kak-sfotografirovat-skol-santehniki.html",
+    "kontakty-i-usloviya.html",
+    "rezultat-i-uhod-posle-restavratsii.html",
+}
 SUMMARY_FACTS = {
     "llms.txt": (
         "Косметическая реставрация не восстанавливает прочность треснувшего корпуса или герметичность.",
