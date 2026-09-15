@@ -41,6 +41,20 @@ Date: 2026-09-15. Site: `https://restb2b.fun/`.
 - Final deployment evidence for the homepage alt repair is recorded in the
   final review after the follow-up release completes.
 
+### R6 - Bing notice repair
+
+- The homepage hero image now exposes an accurate alt description for the
+  before/after ceramic repair example and is no longer hidden from
+  accessibility APIs.
+- The validator requires meaningful alt text for accessible images while
+  allowing intentionally decorative images inside an `aria-hidden="true"`
+  subtree.
+- Regression coverage checks the hero DOM structure, both JSON-LD modified
+  dates, the homepage sitemap entry and the validator's decorative-image
+  branch.
+- Local verification is complete. Live-byte verification of the follow-up
+  release remains pending while the GitHub Pages deployment finishes.
+
 ### R5 - Bing discovery and reports
 
 - Bing accepted `https://restb2b.fun/sitemap.xml` for processing on
