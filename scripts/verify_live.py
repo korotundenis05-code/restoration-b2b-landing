@@ -14,7 +14,16 @@ BASE = "https://restb2b.fun/"
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 urls = [item.text for item in ET.parse(ROOT / "sitemap.xml").findall("s:url/s:loc", NS)]
 paths = [urlsplit(url).path.lstrip("/") or "index.html" for url in urls]
-paths += ["assets/css/styles.css", "assets/js/main.js", "sitemap.xml", "robots.txt", "llms.txt", "llms-full.txt"]
+supporting_paths = [
+    "assets/css/styles.css",
+    "assets/js/main.js",
+    "sitemap.xml",
+    "robots.txt",
+    "llms.txt",
+    "llms-full.txt",
+    "BingSiteAuth.xml",
+]
+paths += supporting_paths
 failures = []
 
 for path in paths:
@@ -46,4 +55,4 @@ for agent in ("YandexBot", "Googlebot", "Bingbot", "OAI-SearchBot"):
 
 if failures:
     raise SystemExit("\n".join(failures))
-print(f"PASS production: {len(urls)} pages and 6 supporting files match this checkout")
+print(f"PASS production: {len(urls)} pages and {len(supporting_paths)} supporting files match this checkout")

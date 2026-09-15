@@ -31,7 +31,7 @@ python3 -m http.server 8080
 
 Действующий сайт: https://restb2b.fun/. Репозиторий: `korotundenis05-code/restoration-b2b-landing`.
 
-Источник в Settings → Pages: GitHub Actions. Обновление ветки `main` запускает `.github/workflows/deploy-pages.yml`: сначала проверяются страницы и тесты, затем публикуется сайт. Не включайте одновременно публикацию из ветки. Сохраняйте `CNAME`, `.nojekyll`, файлы подтверждения Google/Яндекса и ключ IndexNow.
+Источник в Settings → Pages: GitHub Actions. Обновление ветки `main` запускает `.github/workflows/deploy-pages.yml`: сначала проверяются страницы и тесты, затем публикуется сайт. Не включайте одновременно публикацию из ветки. Сохраняйте `CNAME`, `.nojekyll`, файлы подтверждения Google/Яндекса/Bing и ключ IndexNow.
 
 Перед обновлением выполните `python3 -m unittest discover -s tests -v`. После успешного развёртывания выполните `python3 scripts/verify_live.py`: проверка сравнивает обычные публичные URL с локальными файлами без подмены адреса параметрами сброса кеша.
 
