@@ -1,9 +1,10 @@
-"""Regression checks for Bing Webmaster ownership verification."""
+"""Regression checks for Bing Webmaster verification and reported SEO signals."""
 
+import json
 import unittest
 import xml.etree.ElementTree as ET
 
-from scripts.validate_site import ROOT
+from scripts.validate_site import ROOT, Document, has_type, is_accessible_image, validate_image_alt
 
 
 class BingWebmasterVerificationTests(unittest.TestCase):
@@ -41,6 +42,40 @@ class BingWebmasterVerificationTests(unittest.TestCase):
         for number, mutation in enumerate(mutations, start=1):
             with self.subTest(mutation=number), self.assertRaises(AssertionError):
                 self.assert_bing_auth(mutation)
+
+
+class BingSeoSignalTests(unittest.TestCase):
+    HERO_ALT = "Керамический унитаз со сколом до и после локальной реставрации"
+
+    def test_homepage_hero_has_meaningful_alt_text(self):
+        source = (ROOT / "index.html").read_text()
+        document = Document(source)
+        hero = document.select("div", **{"class": "hero-media"})
+        self.assertEqual(len(hero), 1)
+        self.assertNotEqual(hero[0]["attrs"].get("aria-hidden"), "true")
+        images = document.descendants(hero[0], "img")
+        self.assertEqual(len(images), 1)
+        self.assertEqual(images[0]["attrs"].get("alt"), self.HERO_ALT)
+        self.assertTrue(is_accessible_image(images[0]))
+
+    def test_homepage_modified_dates_match_release(self):
+        source = (ROOT / "index.html").read_text()
+        graph = json.loads(Document(source).select("script", type="application/ld+json")[0]["text"])["@graph"]
+        self.assertEqual(next(item for item in graph if has_type(item, "WebSite"))["dateModified"], "2026-09-15")
+        self.assertEqual(next(item for item in graph if has_type(item, "WebPage"))["dateModified"], "2026-09-15")
+        sitemap = (ROOT / "sitemap.xml").read_text()
+        homepage = next(block for block in sitemap.split("<url>")[1:] if "<loc>https://restb2b.fun/</loc>" in block)
+        self.assertIn("<lastmod>2026-09-15</lastmod>", homepage)
+
+    def test_decorative_hidden_images_remain_valid(self):
+        hidden = Document('<div aria-hidden="true"><img src="decorative.webp"></div>')
+        visible = Document('<div><img src="informative.webp" alt="Описание"></div>')
+        self.assertFalse(is_accessible_image(hidden.select("img")[0]))
+        self.assertTrue(is_accessible_image(visible.select("img")[0]))
+        validate_image_alt(hidden.select("img")[0], "fixture.html")
+        validate_image_alt(visible.select("img")[0], "fixture.html")
+        with self.assertRaises(AssertionError):
+            validate_image_alt(Document('<img src="informative.webp" alt="">').select("img")[0], "fixture.html")
 
 
 if __name__ == "__main__":

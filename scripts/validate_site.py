@@ -99,6 +99,20 @@ def has_type(node, name):
     return name in (types if isinstance(types, list) else [types])
 
 
+def is_accessible_image(node):
+    parent = node["parent"]
+    while parent is not None:
+        if parent["attrs"].get("aria-hidden") == "true":
+            return False
+        parent = parent["parent"]
+    return True
+
+
+def validate_image_alt(node, filename):
+    if is_accessible_image(node):
+        check(node["attrs"].get("alt", "").strip(), f"missing or empty image alt: {filename}")
+
+
 def validate_faq(doc, graph, filename):
     visible = doc.faq_pairs()
     marked = [(normal(q["name"]), normal(q["acceptedAnswer"]["text"]))
@@ -165,7 +179,7 @@ def main():
                     if url.fragment:
                         check(any(n["attrs"].get("id") == unquote(url.fragment) for n in docs[target].nodes), f"missing anchor: {f} -> {raw}")
             if node["tag"] == "img":
-                check("alt" in attrs, f"missing image alt: {f}")
+                validate_image_alt(node, f)
         graph = []
         for node in doc.select("script", type="application/ld+json"):
             data = json.loads(node["text"])
