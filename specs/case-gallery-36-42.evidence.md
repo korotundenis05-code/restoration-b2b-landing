@@ -63,6 +63,16 @@
 
 ## Remaining verification
 
-- Independent read-only review.
-- GitHub Pages workflow result.
-- Public byte comparison and browser interaction after deployment.
+None.
+
+## Final review and publication
+
+- Independent read-only review: PASS, 9.8/10, no actionable findings.
+- Commit: `ac7f37c33c6c681dff0eef72c585d2443a5b8b36`.
+- GitHub Pages workflow: PASS,
+  `https://github.com/korotundenis05-code/restoration-b2b-landing/actions/runs/35522960373`.
+- Public byte comparison: PASS for `work-36.webp` through `work-42.webp`.
+- Public HTML: PASS; every new work URL is present as both its deferred-image and
+  lightbox target.
+- Browser check on `https://restb2b.fun/#cases`: PASS. `Показать больше` revealed
+  every new card and work 42 opened in the lightbox.

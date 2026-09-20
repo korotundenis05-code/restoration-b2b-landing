@@ -2,7 +2,7 @@
 
 - Spec version: 1.0
 - Baseline revision: b3b4b8b
-- Current phase: REVIEW
+- Current phase: COMPLETE
 - Iteration: 1
 - Task-owned paths: `index.html`, `assets/images/gallery/work-36.webp` through
   `work-42.webp`, `scripts/build_before_after_collage.py`,
@@ -30,3 +30,7 @@
   direct work-38 rebuild byte comparison PASS; static validation and JSON manifest
   validation PASS; `git diff --check` PASS.
 - Open findings: none pending final acceptance review.
+- Review 5: PASS, no actionable findings, score 9.8/10.
+- Publication: commit ac7f37c deployed by successful GitHub Pages workflow
+  35522960373. Public byte comparison and live browser checks passed.
+- Final verdict: SPECLOOP PASS.
