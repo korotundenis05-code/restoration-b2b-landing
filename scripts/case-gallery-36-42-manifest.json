@@ -1,0 +1,69 @@
+{
+  "source_root_environment": "CASE_GALLERY_SOURCE_ROOT",
+  "collage_command": "python3 scripts/build_before_after_collage.py --before $CASE_GALLERY_SOURCE_ROOT/<before> --after $CASE_GALLERY_SOURCE_ROOT/<after> --output <output>",
+  "cases": [
+    {
+      "work": 36,
+      "before": "36/IMG_9603.HEIC",
+      "before_sha256": "3335c14df5110d7ecc4473090e3fd32952d9d6f3d64e054e3ebd7155375628c9",
+      "after": "36/IMG_9633 2.HEIC",
+      "after_sha256": "732ca385b5a7b1adbe75cbd02b2e3d41eac47cfb9847f38221f17a6e807cb1c7",
+      "output": "assets/images/gallery/work-36.webp",
+      "output_sha256": "029dd189ebf80230097152cf5049305e00d4a46b258a50c030131045d19d95a4"
+    },
+    {
+      "work": 37,
+      "before": "37/IMG_9613.HEIC",
+      "before_sha256": "6aaa17299e0f04d9f164f82fc11a1ca8301ee3694dd6d80b13a8781b16ed4f1f",
+      "after": "37/IMG_9632 2.HEIC",
+      "after_sha256": "936c9f055b65836d8ddcf448616aa99a5e92c8f7af3e57d6639bcefe7c358f5e",
+      "output": "assets/images/gallery/work-37.webp",
+      "output_sha256": "0fb0447063816128a19e759fffed5778979467c613be0d14a56fc574adefef95"
+    },
+    {
+      "work": 38,
+      "before": "38/PHOTO-2026-09-10-09-54-21.jpg",
+      "before_sha256": "117d3311e7ced95fcb4a05ac28f98555e10ee991af8e09290901758e65a0d303",
+      "after": "38/PHOTO-2026-09-10-09-54-21 2.jpg",
+      "after_sha256": "a1276c55373b8a74c197e90f74a257d766b88ffafbc3aae87e4d4e6c27dc0322",
+      "output": "assets/images/gallery/work-38.webp",
+      "output_sha256": "e4af70ab10357c85e6b95cc7fb19956730041d64ba2f2ac8d3460b4e87355c4b"
+    },
+    {
+      "work": 39,
+      "before": "39/PHOTO-2026-09-10-09-55-28.jpg",
+      "before_sha256": "d100efce96b9da892fa48751b805d0dcbed512edf606057b73f00961757d4cf2",
+      "after": "39/PHOTO-2026-09-10-09-55-28\u00a0\u2014 \u043a\u043e\u043f\u0438\u044f.jpg",
+      "after_sha256": "77eb48441bf9494be2d670c1afe579da8d8c5765125298f3168598655dd0a0b6",
+      "output": "assets/images/gallery/work-39.webp",
+      "output_sha256": "86f6a9ab2352675966806ffc3b8e7f220aa16125668f5b5c57d5be4e7bc6f170"
+    },
+    {
+      "work": 40,
+      "before": "40/PHOTO-2026-09-10-10-05-29.jpg",
+      "before_sha256": "1ea659fe919ae8d8d528ff2f5c7a69639c786c81482622346a94c17169d3be0b",
+      "after": "40/PHOTO-2026-09-10-10-05-29\u00a0\u2014 \u043a\u043e\u043f\u0438\u044f.jpg",
+      "after_sha256": "6bd5e6046d2e96c9514e6ed856b751113cc22f4496c4b2285021b8a4d80e840d",
+      "output": "assets/images/gallery/work-40.webp",
+      "output_sha256": "dbc495f95a5fdc6257d46c98b992e7faf40d9407a999d1fd205498e7db30e056"
+    },
+    {
+      "work": 41,
+      "before": "41/PHOTO-2026-09-10-10-12-56.jpg",
+      "before_sha256": "f38b59fe6382eeae3888ebae72966c9b549e4875031cf52f35060ff1c0ebc466",
+      "after": "41/PHOTO-2026-09-10-10-12-56\u00a0\u2014 \u043a\u043e\u043f\u0438\u044f.jpg",
+      "after_sha256": "7d2e0b93a8daca51c922ca69663ee536979a1a7291494f3fa5f4dbd9bbd05840",
+      "output": "assets/images/gallery/work-41.webp",
+      "output_sha256": "334ddaf64606039c4c4149052760b3eb87b68191d7981f1c825f51ffe7f3123e"
+    },
+    {
+      "work": 42,
+      "before": "42/DJI_20260906_135453_194.JPG",
+      "before_sha256": "919d13150888e095af1d9dd9f10edf56a3341e4e7ddbf0db599cadcbe5653dbf",
+      "after": "42/IMG_9872 2.HEIC",
+      "after_sha256": "a75c80823b35cc52bbd2ea15655765ff850c07601d74847c8df5e370845c3459",
+      "output": "assets/images/gallery/work-42.webp",
+      "output_sha256": "fe8b16887738400a7f02eb3824cecff66a744dc510395f64819373debdd09223"
+    }
+  ]
+}
