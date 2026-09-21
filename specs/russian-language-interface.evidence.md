@@ -17,4 +17,6 @@
 
 ## Публикация
 
-Ожидается отправка изменений в ветку `main` и успешное выполнение GitHub Pages.
+- Коммит: `27221d7 Translate customer-facing copy to Russian`.
+- GitHub Pages: успешно, [запуск 35524332750](https://github.com/korotundenis05-code/restoration-b2b-landing/actions/runs/35524332750).
+- Боевая страница `https://restb2b.fun/` открыта после публикации: заголовок вкладки, клиентские тексты и раздел «Вопросы и ответы» отображаются на русском.

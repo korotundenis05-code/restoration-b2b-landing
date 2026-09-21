@@ -28,7 +28,7 @@ ALL ACCEPTANCE CRITERIA PASS
 
 ALL REQUIRED CHECKS PASS
 
-EVIDENCE COMPLETE, кроме результата публикации
+EVIDENCE COMPLETE
 
 NO UNRESOLVED BLOCKERS
 
@@ -40,4 +40,4 @@ NO UNAPPROVED SCOPE CHANGES
 
 NO UNEXPLAINED OUT-OF-SCOPE CHANGES
 
-Оценка: 9.6/10. Готово к публикации.
+Оценка: 9.6/10. Публикация GitHub Pages `35524332750` успешна; боевая страница открыта и проверена.
