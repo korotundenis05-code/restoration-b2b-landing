@@ -39,6 +39,12 @@ class RepairConfidenceTests(unittest.TestCase):
         self.assertIn("сантехника", doc.select("h1")[0]["text"])
         self.assertIn("Санкт-Петербурге", doc.select("p", **{"class": "answer-summary"})[0]["text"])
         self.assertTrue(any("Реставрация посуды, статуэток, антиквариата" in p["text"] for p in doc.select("p")))
+        for source in ("assets/images/case-panel.webp", "assets/images/gallery/work-40.webp"):
+            images = doc.select("img", src=source)
+            self.assertEqual(len(images), 1)
+            self.assertTrue(images[0]["attrs"].get("alt"))
+        toilet = Document((ROOT / "mozhno-li-vosstanovit-skol-na-unitaze.html").read_text())
+        self.assertEqual(len(toilet.select("img", src="assets/images/gallery/work-05.webp")), 1)
 
     def test_each_relevant_product_links_to_result_resource(self):
         for name in ("index.html", "restavratsiya-santehnicheskoy-keramiki.html", "restavratsiya-rakoviny-spb.html", "restavratsiya-unitaza-spb.html", "remont-skolov-vanny-spb.html", "vosstanovlenie-glazuri-santehniki.html", "kontakty-i-usloviya.html"):

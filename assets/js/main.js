@@ -37,13 +37,6 @@ if (header && nav) {
   });
 }
 
-function loadDeferredGalleryImages() {
-  document.querySelectorAll(".gallery img[data-src]").forEach((image) => {
-    image.src = image.dataset.src;
-    image.removeAttribute("data-src");
-  });
-}
-
 document.querySelectorAll(".benefits article").forEach((card) => {
   card.addEventListener("pointermove", (event) => {
     const rect = card.getBoundingClientRect();
@@ -65,10 +58,6 @@ if (gallery && galleryToggle) {
   galleryToggle.addEventListener("click", () => {
     const expanded = gallery.classList.toggle("is-expanded");
     galleryToggle.setAttribute("aria-expanded", String(expanded));
-    if (expanded) {
-      loadDeferredGalleryImages();
-    }
-
     galleryToggle.textContent = expanded ? "Скрыть" : "Показать больше";
 
     if (!expanded) {

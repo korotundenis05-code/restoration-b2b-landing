@@ -137,12 +137,17 @@ def main():
     namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     sitemap = ElementTree.parse(ROOT / "sitemap.xml")
     urls = [n.text for n in sitemap.findall("s:url/s:loc", namespace)]
+    lastmods = {}
+    for item in sitemap.findall("s:url", namespace):
+        loc = item.findtext("s:loc", namespaces=namespace)
+        lastmod = item.findtext("s:lastmod", namespaces=namespace)
+        check(lastmod is not None, f"missing sitemap lastmod: {loc}")
+        check(date.fromisoformat(lastmod) <= date.today(), f"future lastmod: {lastmod}")
+        lastmods[loc] = lastmod
     check(len(urls) == len(set(urls)), "duplicate sitemap URL")
     files = {url.removeprefix(ORIGIN) or "index.html": url for url in urls}
     for url in urls:
         check(url.startswith(ORIGIN) and not urlsplit(url).query, f"noncanonical sitemap URL: {url}")
-    for n in sitemap.findall("s:url/s:lastmod", namespace):
-        check(date.fromisoformat(n.text) <= date.today(), f"future lastmod: {n.text}")
     public = {p.name for p in ROOT.glob("*.html") if not p.name.startswith(("google", "yandex_"))}
     check(public == set(files), f"sitemap mismatch: {public ^ set(files)}")
     docs = {f: Document((ROOT / f).read_text()) for f in files}
@@ -185,6 +190,9 @@ def main():
             data = json.loads(node["text"])
             graph.extend(data.get("@graph", [data]))
         check(any(has_type(n, "WebPage") for n in graph), f"missing WebPage: {f}")
+        for node in graph:
+            if any(has_type(node, kind) for kind in ("WebPage", "WebSite", "Article")):
+                check(node.get("dateModified") == lastmods[files[f]], f"modified date mismatch: {f}")
         validate_faq(doc, graph, f)
         if f in NEW_PAGES:
             for required in ("Service", "BreadcrumbList", "FAQPage"):

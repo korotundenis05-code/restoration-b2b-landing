@@ -43,7 +43,7 @@ class CaseGalleryTests(unittest.TestCase):
             offset = payload + length + (length % 2)
         raise AssertionError(f"no supported WebP image header: {path}")
 
-    def test_new_collages_are_published_as_deferred_gallery_cards(self):
+    def test_new_collages_have_crawlable_lazy_image_urls(self):
         source = (ROOT / "index.html").read_text()
         document = Document(source)
         gallery_cards = {
@@ -69,11 +69,9 @@ class CaseGalleryTests(unittest.TestCase):
                 card_images = document.descendants(gallery_cards[path], "img")
                 self.assertEqual(len(card_images), 1)
                 image = card_images[0]["attrs"]
-                self.assertEqual(
-                    image.get("src"),
-                    "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",
-                )
-                self.assertEqual(image.get("data-src"), path)
+                self.assertEqual(image.get("src"), path)
+                self.assertNotIn("data-src", image)
+                self.assertEqual(image.get("loading"), "lazy")
                 self.assertTrue(image.get("alt", "").strip())
                 asset = ROOT / f"assets/images/gallery/work-{number:02d}.webp"
                 self.assertTrue(asset.is_file())
@@ -86,6 +84,12 @@ class CaseGalleryTests(unittest.TestCase):
                 )
 
         self.assertIn("data-gallery-toggle", source)
+
+        for card in gallery_cards.values():
+            image = document.descendants(card, "img")[0]["attrs"]
+            self.assertTrue(image["src"].startswith("assets/images/gallery/"))
+            self.assertEqual(image.get("loading"), "lazy")
+            self.assertNotIn("data-src", image)
 
     def test_case_manifest_records_source_pairs_and_hashes(self):
         manifest = json.loads((ROOT / "scripts/case-gallery-36-42-manifest.json").read_text())

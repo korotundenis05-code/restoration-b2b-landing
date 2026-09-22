@@ -114,10 +114,10 @@ class YandexIndexationRepairTests(unittest.TestCase):
 
     def test_modified_dates_match_release(self):
         webpage = next(item for item in self.graph() if has_type(item, "WebPage"))
-        self.assertEqual(webpage["dateModified"], "2026-09-14")
+        self.assertEqual(webpage["dateModified"], "2026-09-20")
         sitemap = (ROOT / "sitemap.xml").read_text()
         block = sitemap.split("https://restb2b.fun/vosstanovlenie-skolov-santehniki.html", 1)[1]
-        self.assertIn("<lastmod>2026-09-14</lastmod>", block.split("</url>", 1)[0])
+        self.assertIn("<lastmod>2026-09-20</lastmod>", block.split("</url>", 1)[0])
 
 
 if __name__ == "__main__":
