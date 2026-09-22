@@ -47,3 +47,4 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://restb2b.fun/sitemap.xml
+Sitemap: https://restb2b.fun/sitemap.txt

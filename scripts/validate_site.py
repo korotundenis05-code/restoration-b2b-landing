@@ -145,6 +145,8 @@ def main():
         check(date.fromisoformat(lastmod) <= date.today(), f"future lastmod: {lastmod}")
         lastmods[loc] = lastmod
     check(len(urls) == len(set(urls)), "duplicate sitemap URL")
+    text_urls = (ROOT / "sitemap.txt").read_text().splitlines()
+    check(text_urls == urls, "text sitemap differs from XML sitemap")
     files = {url.removeprefix(ORIGIN) or "index.html": url for url in urls}
     for url in urls:
         check(url.startswith(ORIGIN) and not urlsplit(url).query, f"noncanonical sitemap URL: {url}")
@@ -206,6 +208,7 @@ def main():
             check(files[f] in (ROOT / summary).read_text(), f"missing summary URL: {f} in {summary}")
     robots = (ROOT / "robots.txt").read_text()
     check("Sitemap: " + ORIGIN + "sitemap.xml" in robots, "missing robots sitemap")
+    check("Sitemap: " + ORIGIN + "sitemap.txt" in robots, "missing robots text sitemap")
     for filename in SUMMARY_FACTS:
         validate_summary((ROOT / filename).read_text(), filename)
     contact_doc = docs["kontakty-i-usloviya.html"]

@@ -18,6 +18,7 @@ supporting_paths = [
     "assets/css/styles.css",
     "assets/js/main.js",
     "sitemap.xml",
+    "sitemap.txt",
     "robots.txt",
     "llms.txt",
     "llms-full.txt",
