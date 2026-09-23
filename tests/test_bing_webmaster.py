@@ -61,11 +61,11 @@ class BingSeoSignalTests(unittest.TestCase):
     def test_homepage_modified_dates_match_release(self):
         source = (ROOT / "index.html").read_text()
         graph = json.loads(Document(source).select("script", type="application/ld+json")[0]["text"])["@graph"]
-        self.assertEqual(next(item for item in graph if has_type(item, "WebSite"))["dateModified"], "2026-09-22")
-        self.assertEqual(next(item for item in graph if has_type(item, "WebPage"))["dateModified"], "2026-09-22")
+        self.assertEqual(next(item for item in graph if has_type(item, "WebSite"))["dateModified"], "2026-09-23")
+        self.assertEqual(next(item for item in graph if has_type(item, "WebPage"))["dateModified"], "2026-09-23")
         sitemap = (ROOT / "sitemap.xml").read_text()
         homepage = next(block for block in sitemap.split("<url>")[1:] if "<loc>https://restb2b.fun/</loc>" in block)
-        self.assertIn("<lastmod>2026-09-22</lastmod>", homepage)
+        self.assertIn("<lastmod>2026-09-23</lastmod>", homepage)
 
     def test_decorative_hidden_images_remain_valid(self):
         hidden = Document('<div aria-hidden="true"><img src="decorative.webp"></div>')

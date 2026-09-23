@@ -1048,6 +1048,11 @@ p {
   font-size: 13px;
 }
 
+.site-footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .lightbox {
   position: fixed;
   inset: 0;

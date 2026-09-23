@@ -1,5 +1,6 @@
 """Regression checks for visible FAQ / JSON-LD agreement."""
 
+import json
 import unittest
 
 from scripts.validate_site import ROOT, SUMMARY_FACTS, Document, has_type, main, validate_faq, validate_summary
@@ -82,6 +83,15 @@ class FaqValidationTests(unittest.TestCase):
             for anchor in anchors:
                 with self.subTest(page=name, anchor=anchor):
                     self.assertEqual(len(doc.select("section", id=anchor)), 1)
+
+    def test_public_business_profile_identity(self):
+        profile = "https://yandex.ru/profile/157427855735"
+        doc = Document((ROOT / "index.html").read_text())
+        graph = json.loads(doc.select("script", type="application/ld+json")[0]["text"])["@graph"]
+        business = next(node for node in graph if node.get("@id") == "https://restb2b.fun/#business")
+        self.assertEqual(business["sameAs"], [profile])
+        self.assertNotIn("priceRange", business)
+        self.assertEqual(len(doc.select("a", href=profile)), 1)
 
 
 if __name__ == "__main__":
