@@ -105,6 +105,32 @@ class CaseGalleryTests(unittest.TestCase):
                 self.assertRegex(case["output_sha256"], r"^[0-9a-f]{64}$")
                 self.assertEqual(self.sha256(ROOT / case["output"]), case["output_sha256"])
 
+    def test_work_43_is_published_with_source_provenance(self):
+        manifest = json.loads((ROOT / "scripts/case-gallery-43-manifest.json").read_text())
+        case = manifest["case"]
+        self.assertEqual(manifest["source_root_environment"], "CASE_GALLERY_SOURCE_ROOT")
+        self.assertEqual(case["work"], 43)
+        self.assertEqual(case["output"], "assets/images/gallery/work-43.webp")
+        self.assertEqual(self.sha256(ROOT / case["output"]), case["output_sha256"])
+        self.assertEqual(self.webp_dimensions(ROOT / case["output"]), (1600, 1600))
+
+        source = (ROOT / "index.html").read_text()
+        document = Document(source)
+        path = "assets/images/gallery/work-43.webp?v=20260924"
+        card = next(node for node in document.select("button") if node["attrs"].get("data-gallery") == path)
+        image = document.descendants(card, "img")[0]["attrs"]
+        self.assertEqual(image["src"], path)
+        self.assertEqual(image["loading"], "lazy")
+        self.assertEqual(image["alt"], "Локальное восстановление скола на кромке унитаза до и после")
+
+        structured = json.loads(document.select("script", type="application/ld+json")[0]["text"])["@graph"]
+        gallery = next(node for node in structured if node.get("@type") == "ImageGallery")
+        media = {item["contentUrl"]: item["caption"] for item in gallery["associatedMedia"]}
+        self.assertEqual(
+            media["https://restb2b.fun/assets/images/gallery/work-43.webp"],
+            image["alt"],
+        )
+
     def test_source_hashes_match_manifest_when_source_root_is_available(self):
         source_root = os.environ.get("CASE_GALLERY_SOURCE_ROOT")
         if not source_root:

@@ -1,0 +1,13 @@
+{
+  "source_root_environment": "CASE_GALLERY_SOURCE_ROOT",
+  "collage_command": "python3 scripts/build_before_after_collage.py --before $CASE_GALLERY_SOURCE_ROOT/<before> --after $CASE_GALLERY_SOURCE_ROOT/<after> --output <output>",
+  "case": {
+    "work": 43,
+    "before": "43/109900.jpg",
+    "before_sha256": "200985ff5fc4f83ff88752b72971e3a8e54568c0d9898a5f04e79effe6228fc0",
+    "after": "43/IMG_9980 2.HEIC",
+    "after_sha256": "995a56de2f525046b51627ee40297c258477f0e8594a4d1c559e207eb6cc84c6",
+    "output": "assets/images/gallery/work-43.webp",
+    "output_sha256": "cd92d05df8c3748f2e4e68fecae40556a19b3b9751934e8912b306086cd4fa17"
+  }
+}
